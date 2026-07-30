@@ -9,4 +9,5 @@ emoji
 textblob
 langdetect
 plotly
-fpdf 
+fpdf
+
