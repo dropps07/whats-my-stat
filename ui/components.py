@@ -16,13 +16,13 @@ def render_sidebar():
 def render_header():
     st.markdown("""
     <div style="text-align: center; margin-bottom: 30px;">
-        <h1 style="color: #075E54; margin-bottom: 0;">📱 WhatsStat</h1>
+        <h1 style="color: #075E54; margin-bottom: 0;">whats my stat</h1>
         <p style="color: #666; font-size: 18px;">Advanced WhatsApp Chat Analyzer</p>
     </div>
     """, unsafe_allow_html=True)
 
 def render_stats_section(selected_user, df):
-    st.markdown("## 🔢 Top Statistics")
+    st.markdown("## Top Statistics")
     num_messages, words, num_media, num_links = helper.fetch_stats(selected_user, df)
     
     col1, col2, col3, col4 = st.columns(4)
@@ -40,7 +40,7 @@ def render_stats_section(selected_user, df):
 def render_longest_message_section(df):
     user, message, length = helper.longest_message_sender(df)
     
-    st.markdown("### 🏆 Longest Message Champion")
+    st.markdown("### Longest Message ")
     st.markdown(f"""
     <div class="message-container">
         <div class="message-header">👤 {user} | 📏 {length} Characters</div>
@@ -53,7 +53,7 @@ def render_longest_message_section(df):
 
 def render_most_active_users_section(selected_user, df):
     if selected_user == 'Overall':
-        st.markdown("## 👑 Most Active Users")
+        st.markdown("## Most Active Users")
         x, new_df = helper.most_busy_users(df)
         
         col1, col2 = st.columns([1.5, 1])
@@ -69,11 +69,11 @@ def render_most_active_users_section(selected_user, df):
             st.plotly_chart(fig, use_container_width=True)
             
         with col2:
-            st.markdown("### 📊 User Breakdown")
+            st.markdown("### User Breakdown")
             st.dataframe(new_df, hide_index=True, use_container_width=True)
 
 def render_text_analysis_section(selected_user, df):
-    st.markdown("## 🔤 Text Analysis")
+    st.markdown("## Text Analysis")
     col1, col2 = st.columns(2)
     
     with col1:

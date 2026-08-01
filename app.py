@@ -5,7 +5,7 @@ from ui.components import render_header, render_sidebar, render_stats_section, r
 from ui.styles import apply_custom_css
 import pdf_generator
 
-st.set_page_config(layout='wide', page_title="WhatsStat - WhatsApp Chat Analyzer")
+st.set_page_config(layout='wide', page_title="whats my stat - WhatsApp Chat Analyzer")
 
 apply_custom_css()
 
@@ -99,8 +99,8 @@ st.markdown("""
 <hr style="margin-top: 50px; border: none; border-top: 2px solid #25D366;" />
 
 <div style="text-align: center; padding: 20px 0; font-size: 14px; color: #555;">
-    Developed with ❤️ by <strong>Aditi</strong> <br>
-    <a href="https://github.com/aditiiprasad" target="_blank" style="text-decoration: none; color: #128C7E; font-weight: 600;">GitHub</a> |
-    <a href="https://www.linkedin.com/in/aditiiprasad/" target="_blank" style="text-decoration: none; color: #128C7E; font-weight: 600;">LinkedIn</a>
+    Developed by <strong>Ajey</strong> <br>
+    <a href="https://github.com/dropps07" target="_blank" style="text-decoration: none; color: #128C7E; font-weight: 600;">GitHub</a> |
+    <a href="https://www.linkedin.com/in/ajey-awasthi07/" target="_blank" style="text-decoration: none; color: #128C7E; font-weight: 600;">LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
