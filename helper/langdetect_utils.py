@@ -21,8 +21,8 @@ def detect_languages(selected_user, df):
     sample_size = 1000
     if len(temp) > sample_size:
         temp = temp.sample(n=sample_size, random_state=42)
-    lang_cache={}
-    languages=[]
+    lang_cache = {}
+    languages = []
     for msg in temp['message']:
         if msg in lang_cache:
             lang = lang_cache[msg]
@@ -34,11 +34,15 @@ def detect_languages(selected_user, df):
             lang_cache[msg] = lang
         if lang:
             languages.append(lang)
-        lang_counts = Counter(languages)
-        lang_df = pd.DataFrame(lang_counts.most_common(3), columns=['Language', 'Count'])
-        lang_df['Language'] = lang_df['Language'].apply(get_language_name)
 
-        return lang_df
+    if not languages:
+        return pd.DataFrame([['English', 1]], columns=['Language', 'Count'])
+
+    lang_counts = Counter(languages)
+    lang_df = pd.DataFrame(lang_counts.most_common(3), columns=['Language', 'Count'])
+    lang_df['Language'] = lang_df['Language'].apply(get_language_name)
+    return lang_df
+
         
 
 
